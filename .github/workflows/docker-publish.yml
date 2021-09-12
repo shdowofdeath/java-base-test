@@ -43,8 +43,8 @@ jobs:
           file: ./Dockerfile
           push: true
           #tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ github.repository }}:${{github.run_id}}
-          tags: ${{ github.repository }}:${{github.run_id}}
+          tags: ${{ github.repository }}:${{github.run_number}}
 
 
-      - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
+#       - name: Image digest
+#         run: echo ${{ steps.docker_build.outputs.digest }}
