@@ -43,7 +43,7 @@ jobs:
           file: ./Dockerfile
           push: true
           #tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ github.repository }}:${{github.run_id}}
-          tags: ${{ github.repository }}:${{github.head_ref}}-${{github.run_number}}
+          tags: ${{ github.repository }}:${{github.ref}}-${{github.run_number}}
 
 
 #       - name: Image digest
