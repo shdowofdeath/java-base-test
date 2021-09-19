@@ -53,21 +53,3 @@ jobs:
 ##          aws-secret-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
 #          aws-region: us-west-2
 
-      - name: Login to Amazon ECR
-        id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v1
-        with:
-         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      - name: AWS ECR
-        uses: kciter/aws-ecr-action@v4
-        with:
-          access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          account_id: 801193812865
-          repo: java-base-test
-          region: us-west-2
-          create_repo: true
-          tags: ${{github.run_id}} # optional, default is latest
-          dockerfile: Dockerfile # optional, default is Dockerfile
-          path: . # optional, default is .
